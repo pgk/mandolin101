@@ -1,0 +1,4 @@
+
+export const UPDATE_PITCH = 'UPDATE_PITCH';
+
+export const UPDATE_CAN_USE_MIC = 'UPDATE_CAN_USE_MIC';
