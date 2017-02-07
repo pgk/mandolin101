@@ -1,3 +1,68 @@
+import { combineReducers } from 'redux';
+import { UPDATE_PITCH, UPDATE_CAN_USE_MIC } from './../constants'
+
+const tunerInitialState = {
+    foundNote: false,
+    pitch: '-',
+    noteNum: -1,
+    note: '--',
+    detune: '-'
+}
+
+const permissionsInitialState = {
+  canUseMic: false
+};
+
+const instrumentsInitialState = {
+  instruments: [
+    {
+      name: 'Mandolin',
+      slug: '/mandolin',
+      type: 'stringed',
+      strings: '4 pairs',
+      tuning: ['G', 'D', 'A', 'E'],
+      clefs: ['Treble']
+    }
+  ]
+}
+
+let instruments = (state = instrumentsInitialState, action) => {
+  let actionType = action.type;
+
+  switch (actionType) {
+    default:
+      return state
+  }
+}
+
+let tuner = (state = tunerInitialState, action) => {
+  let result = action.result;
+  let actionType = action.type;
+
+  switch (actionType) {
+    case UPDATE_PITCH:
+      return Object.assign({}, state, result);
+    default:
+      return state
+  }
+};
+
+let permissions = (state = permissionsInitialState, action) => {
+  let canUseMic = action.canUseMic;
+  let actionType = action.type;
+  switch (actionType) {
+    case UPDATE_CAN_USE_MIC:
+      return {canUseMic: canUseMic};
+    default:
+      return state
+  }
+};
+
+export default combineReducers({
+  tuner,
+  permissions,
+  instruments
+});
 
 
 
