@@ -1,15 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import { createTuner } from './models/tuner';
-import reducer from './reducers';
-import './index.css';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './components/App'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import { createTuner } from './models/tuner'
+import reducer from './reducers'
+import './index.css'
 
-const store = createStore(reducer);
+const store = createStore(reducer)
 
-createTuner(store);
+// bootstrap our tuner
+createTuner(store)
 
 ReactDOM.render(
   <Provider store={store}>
