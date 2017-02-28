@@ -12,6 +12,8 @@ const store = createStore(reducer)
 // bootstrap our tuner
 createTuner(store)
 
+console.log('mando')
+
 ReactDOM.render(
   <Provider store={store}>
     <App />
